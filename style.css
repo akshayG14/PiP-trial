@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 html {
   box-sizing: border-box;
@@ -10,16 +10,70 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* source: https://uigradients.com/#Selenium */
-  background: #3c3b3f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #605c3c, #3c3b3f); /* Chrome 10-25, Safari 5.1-6 */
+  /* source: https://uigradients.com/#RoyalBlue */
+  background: #536976; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #292e49, #536976); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to bottom,
-    #605c3c,
-    #3c3b3f
+    to top,
+    #292e49,
+    #536976
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#button {
-  font-family: "Oswald", sans-serif;
+.bttn-start:link,
+.bttn-start:visited {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #536976;
+  background-color: #fff;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+.bttn-start:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.bttn-start:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.bttn-start::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.bttn-start:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
